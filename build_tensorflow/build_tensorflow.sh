@@ -109,7 +109,8 @@ function build_bazel()
 
   echo "####### About to call compile.sh"
   echo "####### BAZEL_JAVAC_OPTS: ${BAZEL_JAVAC_OPTS}"
-  echo "####### BAZEL_JAVAC_OPTS: ${BAZEL_VERSION}"
+  echo "####### BAZEL_VERSION: ${BAZEL_VERSION}"
+  echo "####### EXTRA_BAZEL_ARGS: ${EXTRA_BAZEL_ARGS}"
 
   ./compile.sh
   if [ ! -f ./output/bazel ]; then
