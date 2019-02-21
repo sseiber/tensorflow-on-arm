@@ -107,6 +107,9 @@ function build_bazel()
     cd bazel-${BAZEL_VERSION}/
   fi
 
+  echo "####### About to call compile.sh"
+  echo "####### BAZEL_JAVAC_OPTS: ${BAZEL_JAVAC_OPTS}"
+
   ./compile.sh
   if [ ! -f ./output/bazel ]; then
     log_failure_msg "error when compile bazel"
