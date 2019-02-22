@@ -2,6 +2,7 @@ FROM debian:stretch
 
 RUN dpkg --add-architecture armhf && dpkg --add-architecture arm64 \
     && apt-get update && apt-get install -y \
+        nano \
         openjdk-8-jdk automake autoconf \
         curl zip unzip libtool swig zlib1g-dev pkg-config git g++ wget xz-utils \
         python-numpy python-pip python-mock \
