@@ -289,13 +289,12 @@ function build_tensorflow()
 
 function main()
 {
-    # create_tempdir
-    # build_bazel
-    # toolchain
-    BAZEL_BIN="$(command -v echo)"
+    create_tempdir
+    build_bazel
+    toolchain
     download_tensorflow
-    # configure_tensorflow
-    # build_tensorflow
+    configure_tensorflow
+    build_tensorflow
 }
 
 main

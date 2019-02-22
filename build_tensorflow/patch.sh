@@ -30,8 +30,5 @@ function tf_toolchain_patch()
   echo "####### Inside tf_toolchain_patch: ${CROSSTOOL_VERSION}"
   echo "####### CROSSTOOL_VERSION: ${CROSSTOOL_VERSION}"
   echo "####### Patch file path: ${PATCH_DIR}/patch.patch"
-  git apply --stat ${PATCH_DIR}/patch.patch || {
-    echo "####### Trying again with: ${PATCH_DIR}/patch.patch"
-    git apply --stat ${PATCH_DIR}/simple_patch
-  }
+  git apply --stat ${PATCH_DIR}/patch.patch
 }
