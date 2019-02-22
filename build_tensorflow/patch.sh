@@ -27,5 +27,5 @@ function tf_toolchain_patch()
   local CROSSTOOL_EXTRA_INCLUDE="$3"
   [ -z "$CROSSTOOL_EXTRA_INCLUDE" ] && CROSSTOOL_EXTRA_INCLUDE="/usr/local/include/"
   local CROSSTOOL_VERSION=$($CROSSTOOL_DIR/bin/$CROSSTOOL_NAME-gcc -dumpversion)
-  git apply --stat patch.patch
+  git apply --stat ${PATCH_DIR}/patch.patch
 }
