@@ -182,12 +182,15 @@ function download_tensorflow()
   git config user.email "temp@example.com"
   git config user.name "temp"
 
+  echo "####### TF_PATCH: ${TF_PATCH}"
   if [ "$TF_PATCH" == "yes" ]; then
+     echo "####### Going to patch..."
      tf_patch || {
        log_failure_msg "error when apply patch"
        exit 1
      }
   fi
+  echo "####### Done checking patch..."
 
   if [ ! -z "$CROSSTOOL_DIR" ] && [ ! -z "$CROSSTOOL_NAME" ]; then
     tf_toolchain_patch "$CROSSTOOL_NAME" "$CROSSTOOL_DIR" "$CROSSTOOL_EXTRA_INCLUDE" || {
