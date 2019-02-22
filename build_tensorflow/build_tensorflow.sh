@@ -192,6 +192,9 @@ function download_tensorflow()
   fi
   echo "####### Done checking patch..."
 
+  echo "####### CROSSTOOL_DIR: ${CROSSTOOL_DIR}"
+  echo "####### CROSSTOOL_NAME: ${CROSSTOOL_NAME}"
+  echo "####### CROSSTOOL_EXTRA_INCLUDE: ${CROSSTOOL_EXTRA_INCLUDE}"
   if [ ! -z "$CROSSTOOL_DIR" ] && [ ! -z "$CROSSTOOL_NAME" ]; then
     tf_toolchain_patch "$CROSSTOOL_NAME" "$CROSSTOOL_DIR" "$CROSSTOOL_EXTRA_INCLUDE" || {
       log_failure_msg "error when apply crosstool patch"
